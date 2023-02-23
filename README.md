@@ -5,9 +5,9 @@ Arabic Font 2 Plus is a WordPress plugin that allows you to change the font of a
 
 Installation
 ------------
-[![Github Downloads (total)](https://img.shields.io/github/downloads/almahmudbd/arabic-font2-plus/total.svg)]()
+[![Github Downloads (total)](https://img.shields.io/github/downloads/almahmudbd/arabic-font2-plus/total?color=blue&style=for-the-badge)](https://github.com/almahmudbd/arabic-font2-plus/releases/download/)
 
-1.  Download the plugin from the WordPress Plugin Repository or from the [GitHub repository](https://github.com/almahmudar/arabic-font2-plus).
+1.  Download the plugin from the WordPress Plugin Repository or from the [GitHub repository](https://github.com/almahmudbd/arabic-font2-plus).
 2.  Upload the plugin files to the `/wp-content/plugins/arabic-font2-plus` directory, or install the plugin through the WordPress plugins screen directly.
 3.  Activate the plugin through the 'Plugins' screen in WordPress.
 
