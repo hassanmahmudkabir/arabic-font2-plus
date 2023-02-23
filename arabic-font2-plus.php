@@ -9,7 +9,7 @@ Author URI: https://thealmahmud.blogspot.com/
 */
 
 function custom_arabic_font_shortcode($atts, $content = null) {
-  // Get font family and font size from shortcode attributes, or use the default theme font and font size if not specified
+  // Get font family and font size from shortcode attributes, or use the default font and font size if not specified
   $font_family = isset($atts['font']) ? $atts['font'] : 'noorehira';
   $font_size = isset($atts['size']) ? $atts['size'] : '22px';
 
