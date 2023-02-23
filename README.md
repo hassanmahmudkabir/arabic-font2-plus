@@ -21,11 +21,16 @@ By default, the plugin will use the noorehira font. If you want to use a specifi
 
 `[arabic font="Amiri"]هذا هو نص عربي[/arabic]` 
 
-The plugin supports TTF, WOFF, and WOFF2 font formats. To use a custom font, simply upload the font files to the `wp-content/plugins/arabic-font2-plus/fonts` directory. The font files must be named after the font family they represent. For example, if you have a font family named `Amiri`, you should name your font files `Amiri.ttf`, `Amiri.woff`, and `Amiri.woff2`.
+The plugin supports TTF, WOFF, and WOFF2 font formats. To use a custom font, simply upload the font files to the `wp-content/plugins/arabic-font2-plus/fonts` directory. The font files must be named after the font family they represent. For example, if you have a font family named `Amiri`, you should name your font files `Amiri.ttf`, `Amiri.woff`, or `Amiri.woff2`.
 
-You can also optionally specify the font size in the shortcode. The default font size is 22px. To change the font size, add the `size` attribute to the shortcode:
+You can also optionally specify the font size in the shortcode. The default font size is 26px. To change the font size, add the `size` attribute to the shortcode:
 
-`[arabic font="Amiri" size="24"]هذا هو نص عربي[/arabic]` 
+`[arabic font="Amiri" size="24px"]هذا هو نص عربي[/arabic]` 
+
+You can also optionally specify the line-height aka line gap in the shortcode. The default line gap is 46px. To change the gap, add the `gap` attribute to the shortcode:
+
+`[arabic font="Amiri" size="24px" gap="48px"]هذا هو نص عربي[/arabic]` 
+
 
 Support
 -------
