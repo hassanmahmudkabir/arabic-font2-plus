@@ -1,5 +1,3 @@
-Sure, here's an updated version of the readme file:
-
 Arabic Font 2 Plus
 ==================
 
