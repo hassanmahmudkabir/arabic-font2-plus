@@ -1,32 +1,58 @@
 <?php
-/*
-Plugin Name: Arabic Font 2 Plus
-Plugin URI: https://ruqyahbd.org/
-Description: This plugin allows you to change the font of a single line in a post using a shortcode.
-Author: almahmud & ChatGPT
-Version: 1.2
-Author URI: https://thealmahmud.blogspot.com/
-*/
+/**
+ * Plugin Name: Arabic Font 2 Plus
+ * Plugin URI: https://thealmahmud.blogspot.com/
+ * Description: This plugin allows you to change the font of a single line in a post using a shortcode.
+ * Version: 1.2
+ * Author: almahmud & ChatGPT
+ * Author URI: https://thealmahmud.blogspot.com/
+ */
 
-function custom_arabic_font_shortcode($atts, $content = null) {
-  // Get font family, Line gap and font size from shortcode attributes, or use the default font and font size if not specified
-  $font_family = isset($atts['font']) ? $atts['font'] : 'noorehira';
-  $font_size = isset($atts['size']) ? $atts['size'] : '26px';
-  $line_height = isset($atts['gap']) ? $atts['size'] : '46px';
-
-  // Check if the font file exists
-  $font_file = plugin_dir_path(__FILE__) . 'fonts/' . $font_family . '.ttf';
-
-  if (!file_exists($font_file)) {
-    $font_file = plugin_dir_path(__FILE__) . 'fonts/noorehira.ttf';
-  }
-
-  // Enqueue the font file
-  wp_enqueue_style('custom-arabic-font-' . $font_family, plugin_dir_url(__FILE__) . 'fonts/' . $font_family . '.css');
-
-  // Return the content with the custom font and font size applied
-  return '<span style="font-family: ' . $font_family . '; font-size: ' . $font_size . '; line-height: ' . $line_height . ';">' . $content . '</span>';
+/**
+ * Enqueue styles for shortcode display.
+ */
+function arabic_font_2_lite_enqueue_styles() {
+    wp_enqueue_style( 'arabic-font-2-lite-style', plugin_dir_url( __FILE__ ) . 'style.css', array(), '1.0', 'all' );
 }
 
-add_shortcode('arabic', 'custom_arabic_font_shortcode');
-?>
+add_action( 'wp_enqueue_scripts', 'arabic_font_2_lite_enqueue_styles' );
+
+/**
+ * Generate the Arabic font shortcode output.
+ *
+ * @param  array $atts Shortcode attributes.
+ * @param  string $content Shortcode content.
+ * @return string Shortcode output.
+ */
+function arabic_font_2_lite_shortcode( $atts, $content = null ) {
+    $atts = shortcode_atts( array(
+        'font' => 'noorehira',
+        'size' => '26px',
+        'gap' => '46px'
+    ), $atts, 'arabic' );
+
+    // Check if the font file exists
+    $font_files = array(
+        plugin_dir_path( __FILE__ ) . 'fonts/' . $atts['font'] . '.ttf',
+        plugin_dir_path( __FILE__ ) . 'fonts/' . $atts['font'] . '.woff',
+        plugin_dir_path( __FILE__ ) . 'fonts/' . $atts['font'] . '.woff2',
+    );
+
+    foreach ( $font_files as $font_file ) {
+        if ( file_exists( $font_file ) ) {
+            $font_file_path = $font_file;
+            break;
+        }
+    }
+
+    if ( ! isset( $font_file_path ) ) {
+        return 'Font file not found.';
+    }
+
+    // Generate shortcode output
+    $output = '<span class="arabic-font-2-lite" style="font-family: ' . $atts['font'] . '; font-size: ' . $atts['size'] . '; line-height: ' . $atts['gap'] . ';">' . $content . '</span>';
+
+    return $output;
+}
+
+add_shortcode( 'arabic', 'arabic_font_2_lite_shortcode' );
