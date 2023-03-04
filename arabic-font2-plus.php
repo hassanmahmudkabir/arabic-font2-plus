@@ -3,7 +3,7 @@
  * Plugin Name: Arabic Font 2 Plus
  * Plugin URI: https://thealmahmud.blogspot.com/
  * Description: This plugin allows you to change the font of a single line in a post using a shortcode.
- * Version: 1.2
+ * Version: 1.3
  * Author: almahmud & ChatGPT
  * Author URI: https://thealmahmud.blogspot.com/
  */
