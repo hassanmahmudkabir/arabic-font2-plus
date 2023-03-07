@@ -24,9 +24,11 @@ function arabic_font_2_lite_shortcode( $atts, $content = null ) {
 
     // Check if the font file exists
     $font_files = array(
-        plugin_dir_path( __FILE__ ) . 'fonts/' . $atts['font'] . '.ttf',
+        plugin_dir_path( __FILE__ ) . 'fonts/' . $atts['font'] . '.eot',
         plugin_dir_path( __FILE__ ) . 'fonts/' . $atts['font'] . '.woff',
         plugin_dir_path( __FILE__ ) . 'fonts/' . $atts['font'] . '.woff2',
+        plugin_dir_path( __FILE__ ) . 'fonts/' . $atts['font'] . '.ttf',
+        plugin_dir_path( __FILE__ ) . 'fonts/' . $atts['font'] . '.svg',
     );
 
     foreach ( $font_files as $font_file ) {
