@@ -18,7 +18,7 @@
 function arabic_font_2_lite_shortcode( $atts, $content = null ) {
     $atts = shortcode_atts( array(
         'font' => 'noorehira',
-        'size' => '26px',
+        'size' => '1rem',
         'gap' => '46px'
     ), $atts, 'arabic' );
 
