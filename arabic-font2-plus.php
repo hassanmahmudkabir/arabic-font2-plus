@@ -15,7 +15,7 @@
  * @param  string $content Shortcode content.
  * @return string Shortcode output.
  */
-function arabic_font_2_lite_shortcode( $atts, $content = null ) {
+function arabic_font_2_plus_shortcode( $atts, $content = null ) {
     $atts = shortcode_atts( array(
         'font' => 'noorehira',
         'size' => '1rem',
@@ -68,7 +68,7 @@ function arabic_font_2_lite_shortcode( $atts, $content = null ) {
     return $output;
 }
 
-add_shortcode( 'arabic', 'arabic_font_2_lite_shortcode' );
+add_shortcode( 'arabic', 'arabic_font_2_plus_shortcode' );
 
 function main_inline_css(){
     $main_css = `<style> .main-style-arabic-font-2-plus {
