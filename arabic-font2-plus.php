@@ -9,15 +9,6 @@
  */
 
 /**
- * Enqueue styles for shortcode display.
- */
-function arabic_font_2_lite_enqueue_styles() {
-    wp_enqueue_style( 'arabic-font-2-lite-style', plugin_dir_url( __FILE__ ) . 'style.css', array(), '1.0', 'all' );
-}
-
-add_action( 'wp_enqueue_scripts', 'arabic_font_2_lite_enqueue_styles' );
-
-/**
  * Generate the Arabic font shortcode output.
  *
  * @param  array $atts Shortcode attributes.
