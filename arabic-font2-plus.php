@@ -19,7 +19,8 @@ function arabic_font_2_lite_shortcode( $atts, $content = null ) {
     $atts = shortcode_atts( array(
         'font' => 'noorehira',
         'size' => '1rem',
-        'gap' => '46px'
+        'gap' => '46px',
+        'custom_css' => ''
     ), $atts, 'arabic' );
 
     // Check if the font file exists
@@ -43,11 +44,26 @@ function arabic_font_2_lite_shortcode( $atts, $content = null ) {
     }
 
     static $inline_css = array();
+    $search_for = $atts['font'];
 
+    if (empty($inline_css)) {
+        $inline_css = array(true_css);
+        add_action('wp_head', 'main_inline_css');
+    } elseif (in_array(strtolower($search_for), array_map('strtolower', $myArray), true)) {
+        $custom_css = `@font-face {
+        font-family: '`.$atts['font'].`';
+        src: url('`.$font_file_path.`');
+        };`;
+        $custom_css .= $atts['custom_css'];
+        add_action( 'wp_head', 'mirror_css', 10, 1, $custom_css );
+        array_push($inline_css, $search_for);
+    } else {
+        //slience is golden
+    }
 
 
     // Generate shortcode output
-    $output = '<span class="arabic-font-2-plus main-style-arabic-font-2-plus" style="font-family: ' . $atts['font'] . ';">' . $content . '</span>';
+    $output = '<span class="arabic-font-2-plus main-style-arabic-font-2-plus">' . $content . '</span>';
 
     return $output;
 }
@@ -61,4 +77,9 @@ function main_inline_css(){
             ` . $atts['custom-css'] . `
         }</style>`;
     echo $main_css;
+}
+
+function mirror_css($css = '')
+{
+    echo '<style>'.$css.'</style>';
 }
