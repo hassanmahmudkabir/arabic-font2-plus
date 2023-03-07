@@ -39,7 +39,7 @@ function arabic_font_2_lite_shortcode( $atts, $content = null ) {
     }
 
     if ( ! isset( $font_file_path ) ) {
-        return 'Font file not found.';
+        return 'Font file <strong>'.$atts['font'].'</strong> You Provided not found.';
     }
 
     // Generate shortcode output
