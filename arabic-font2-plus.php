@@ -63,7 +63,7 @@ function arabic_font_2_plus_shortcode( $atts, $content = null ) {
 
 
     // Generate shortcode output
-    $output = '<span class="arabic-font-2-plus main-style-arabic-font-2-plus">' . $content . '</span>';
+    $output = '<span class="arabic-font-2-plus main-style-arabic-font-2-plus">' . do_shortcode($content) . '</span>';
 
     return $output;
 }
