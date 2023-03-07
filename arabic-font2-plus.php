@@ -47,9 +47,18 @@ function arabic_font_2_lite_shortcode( $atts, $content = null ) {
 
 
     // Generate shortcode output
-    $output = '<span class="arabic-font-2-lite" style="font-family: ' . $atts['font'] . '; font-size: ' . $atts['size'] . '; line-height: ' . $atts['gap'] . ';">' . $content . '</span>';
+    $output = '<span class="arabic-font-2-plus main-style-arabic-font-2-plus" style="font-family: ' . $atts['font'] . ';">' . $content . '</span>';
 
     return $output;
 }
 
 add_shortcode( 'arabic', 'arabic_font_2_lite_shortcode' );
+
+function main_inline_css(){
+    $main_css = `<style> .main-style-arabic-font-2-plus {
+            font-size: ` . $atts['size'] . `;
+            line-height: ` . $atts['gap'] . `;
+            ` . $atts['custom-css'] . `
+        }</style>`;
+    echo $main_css;
+}
