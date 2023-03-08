@@ -79,7 +79,6 @@ function inline_css_arabic_font_2_plus($size, $gap) {
     </style>
     <?php
 }
-add_action('wp_head', 'inline_css_arabic_font_2_plus', 10, 2);
 
 function user_provided_css_arabic_font_2_plus($font, $font_path, $css = '') {
     ?>
@@ -92,4 +91,3 @@ function user_provided_css_arabic_font_2_plus($font, $font_path, $css = '') {
     </style>
     <?php
 }
-add_action('wp_head', 'user_provided_css_arabic_font_2_plus', 11, 3);
