@@ -59,10 +59,8 @@ function arabic_font_shortcode_callback( $atts, $content = null ) {
         }
     }
 
-    if ( ! isset( $font_file_path ) ) {
-        if ( ! isset( $font_file_path ) ) {
-            return 'Font file <strong>'.$font_name.'</strong> You Provided not found.';
-        }
+    if (!isset( $font_file_path)) {
+        return 'Font file <strong>'.$font_name.'</strong> You Provided not found.';
     }
 
     static $css_bin = array();
