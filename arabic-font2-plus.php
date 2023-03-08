@@ -12,9 +12,8 @@
 {
     ?>
     <style type="text/css">
-        
-        arabic-font-2-lite {
-        font-size:: <?php echo $size; ?>;
+        .arabic-font-2-lite {
+        font-size: <?php echo $size; ?>;
         line-height: <?php echo $gap; ?>;
         }
     </style>
