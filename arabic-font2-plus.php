@@ -9,6 +9,19 @@
  */
 
 /**
+ * DEVELOPER NOTE:
+ * Hello, it's Hassan Here. this plugin was created at first with the help of ChatGPT by almahmud. As it wasn't working as intended i did take the job to fix it and Alhamdullah (All Praise TO Allah). Though There are a vast amount of existing plugins whice do the same as this one, i take this refactoring(back then i thought) job as a fun challenge And It's here now.
+ * This Plugin Is Rewritten, From "Kind Of Scratch", because previous plugin was so much confusing and much more work was need to be performed, So I took this One From https: //github.com/almahmudbd/arabic-font2-plus ,then tried to
+ * fix known bugs
+ * improve code security
+ * introduced some critical logic checking
+ * repetative css printing was eliminated
+ * introduced some major new feature such as custom css, input "validation" etc
+ *
+ * Have A Happy Time
+ **/
+
+/**
  * Generate the Arabic font shortcode output.
  *
  * @param  array $atts Shortcode attributes.
