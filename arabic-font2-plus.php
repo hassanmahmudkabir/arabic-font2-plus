@@ -97,7 +97,7 @@ function arabic_font_shortcode_callback( $atts, $content = null ) {
     }
 
     // Generate shortcode output
-    $output = '<div class="arabic-font-2-lite" style="font-family: '.$font_name.';'.$custom_css.'">' . $content . '</div>';
+    $output = '<div class="arabic-font-2-lite" style="font-family: '.$font_name.';'.$custom_css.'">' . do_shortcode($content) . '</div>';
 
     return $output;
 }
