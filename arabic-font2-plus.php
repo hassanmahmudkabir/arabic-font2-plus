@@ -22,13 +22,28 @@ function arabic_font_2_lite_shortcode( $atts, $content = null ) {
         'gap' => '46px'
     ), $atts, 'arabic' );
 
+    //sanitize user inputs
+    $font_name = sanitize_text_field($atts['font']);
+
+    // Sanitize and validate the size attribute
+    $font_size = esc_attr( $atts['size'] );
+    if ( ! preg_match( '/^\d+(px|em|rem|%|pt|pc)$/', $font_size ) ) {
+        $font_size = '1rem'; // Use default size if user input is invalid
+    }
+
+    // Sanitize and validate the gap attribute
+    $font_gap = esc_attr( $atts['gap'] );
+    if ( ! preg_match( '/^\d+(px|em|rem|%|pt|pc)$/', $font_gap ) ) {
+        $font_gap = '46px'; // Use default gap if user input is invalid
+    }
+
     // Check if the font file exists
     $font_files = array(
-        plugin_dir_path( __FILE__ ) . 'fonts/' . $atts['font'] . '.eot',
-        plugin_dir_path( __FILE__ ) . 'fonts/' . $atts['font'] . '.woff',
-        plugin_dir_path( __FILE__ ) . 'fonts/' . $atts['font'] . '.woff2',
-        plugin_dir_path( __FILE__ ) . 'fonts/' . $atts['font'] . '.ttf',
-        plugin_dir_path( __FILE__ ) . 'fonts/' . $atts['font'] . '.svg',
+        plugin_dir_path( __FILE__ ) . 'fonts/' . $font_name . '.eot',
+        plugin_dir_path( __FILE__ ) . 'fonts/' . $font_name . '.woff',
+        plugin_dir_path( __FILE__ ) . 'fonts/' . $font_name . '.woff2',
+        plugin_dir_path( __FILE__ ) . 'fonts/' . $font_name . '.ttf',
+        plugin_dir_path( __FILE__ ) . 'fonts/' . $font_name . '.svg',
     );
 
     foreach ( $font_files as $font_file ) {
@@ -40,7 +55,7 @@ function arabic_font_2_lite_shortcode( $atts, $content = null ) {
 
     if ( ! isset( $font_file_path ) ) {
         if ( ! isset( $font_file_path ) ) {
-            return 'Font file <strong>'.$atts['font'].'</strong> You Provided not found.';
+            return 'Font file <strong>'.$font_name.'</strong> You Provided not found.';
         }
     }
 
