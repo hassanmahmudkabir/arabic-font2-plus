@@ -64,6 +64,35 @@ function arabic_font_2_lite_shortcode( $atts, $content = null ) {
 
     static $status_css_arabic_font_2_plus = array();
 
+    // add a var to store current font name
+    $search_for = $font_name;
+
+    if (empty($status_css_arabic_font_2_plus)) {
+        //if array is empty,(whice it should be on very first run in every page) then register the event to the array and print the standard css for the shortcode then print custom css related to the font
+        array_push($status_css_arabic_font_2_plus, "true_css");
+
+        //standard css for the shortcode
+        inline_css_arabic_font_2_plus($font_size, $font_gap);
+
+        //custom css related to the font
+        user_provided_css_arabic_font_2_plus($font_name, $font_file_path);
+
+        //store the event
+        array_push($status_css_arabic_font_2_plus, $search_for);
+
+    } elseif (!in_array(strtolower($search_for), array_map('strtolower', $status_css_arabic_font_2_plus), true) && in_array("true_css", array_map('strtolower', $status_css_arabic_font_2_plus), true)) {
+        //if the array isn't empty, then convert font name and array to lower case prior to search the font name in the array, if found and if this is second time, on whice shortcode is executing then simply print custom css related to the font, prior to register the event
+
+        //custom css related to the font
+        user_provided_css_arabic_font_2_plus($font_name, $font_file_path);
+
+        //store the event
+        array_push($status_css_arabic_font_2_plus, $search_for);
+
+    } else {
+        //slience is golden
+    }
+
     // Generate shortcode output
     $output = '<span class="arabic-font-2-lite">' . $content . '</span>';
 
