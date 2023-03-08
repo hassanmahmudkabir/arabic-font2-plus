@@ -1,13 +1,13 @@
-Arabic Font 2 Plus "Extended"
+Arabic Font 2 Plus
 ==================
 
-Arabic Font 2 Plus "Extended" is a WordPress plugin allows you to change the font of text in a post using a shortcode. 
+Arabic Font 2 Plus is a WordPress plugin allows you to change the font of text in a post using a shortcode. 
 
 Installation
 ------------
-[![Github Downloads (total)](https://img.shields.io/github/downloads/almahmudbd/arabic-font2-plus-extended/total?color=green&style=for-the-badge)](https://github.com/hassanmahmudkabir/arabic-font2-plus-extended/releases)
+[![Github Downloads (total)](https://img.shields.io/github/downloads/almahmudbd/arabic-font2-plus/total?color=green&style=for-the-badge)](https://github.com/almahmudbd/arabic-font2-plus/releases)
 
-1.  Download the plugin from the WordPress Plugin Repository or from the [GitHub repository](https://github.com/hassanmahmudkabir/arabic-font2-plus-extended).
+1.  Download the plugin from the WordPress Plugin Repository or from the [GitHub repository](https://github.com/almahmudbd/arabic-font2-plus/).
 2.  Upload the plugin files to the `/wp-content/plugins/arabic-font2-plus-extended` directory, or install the plugin through the WordPress plugins screen directly.
 3.  Activate the plugin through the 'Plugins' screen in WordPress.
 
@@ -46,4 +46,4 @@ Please note This Is A Plugin By [Hassan Mahmud Kabir](https://www.facebook.com/h
 Support
 -------
 
-If you encounter any issues with the plugin, please submit an issue on the [GitHub repository](https://github.com/hassanmahmudkabir/arabic-font2-plus-extended/issues).
+If you encounter any issues with the plugin, please submit an issue on the [GitHub repository](https://github.com/almahmudbd/arabic-font2-plus/issues).
