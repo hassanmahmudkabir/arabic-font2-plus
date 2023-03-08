@@ -61,7 +61,7 @@ function arabic_font_2_lite_shortcode( $atts, $content = null ) {
     static $status_css_arabic_font_2_plus = array();
 
     // Generate shortcode output
-    $output = '<span class="arabic-font-2-lite" style="font-family: ' . $atts['font'] . '; font-size: ' . $atts['size'] . '; line-height: ' . $atts['gap'] . ';">' . $content . '</span>';
+    $output = '<span class="arabic-font-2-lite">' . $content . '</span>';
 
     return $output;
 }
