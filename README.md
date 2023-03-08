@@ -41,7 +41,7 @@ And shortcode inside of **[arabic][/arabic]** is allowed, and will execute as it
 BackStory
 --------
 
-Please note This Is A Plugin By Hassan Mahmud Kabir(https://www.facebook.com/hassan.mahmud.kabir.1/) (hassan.mahmud.kabir[at]gmail.com) Inspired By A Plugin Arabic Font 2 Plus (https://github.com/almahmudbd/arabic-font2-plus),Created By ChatGPT By the direction of almahmud(https://thealmahmud.blogspot.com/)
+Please note This Is A Plugin By [Hassan Mahmud Kabir](https://www.facebook.com/hassan.mahmud.kabir.1/) (hassan.mahmud.kabir[at]gmail.com) Inspired By A Plugin named [Arabic Font 2 Plus](https://github.com/almahmudbd/arabic-font2-plus),Created By ChatGPT By the direction of [almahmud](https://thealmahmud.blogspot.com/)
 
 Support
 -------
