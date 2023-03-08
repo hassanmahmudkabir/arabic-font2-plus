@@ -22,6 +22,19 @@
 }
 add_action('wp_head', 'inline_css_arabic_font_2_plus');
 
+function user_provided_css_arabic_font_2_plus($font, $font_path, $css = '') {
+    ?>
+    <style id="user_provided_css_arabic_font_2_plus" type="text/css">
+    @font-face {
+        font-family: '<?php echo $font; ?>';
+        src: url('<?php echo $font_path; ?>');
+    };
+    <?php echo $css; ?>
+    </style>
+    <?php
+}
+add_action('wp_head', 'user_provided_css_arabic_font_2_plus');
+
 /**
  * Generate the Arabic font shortcode output.
  *
