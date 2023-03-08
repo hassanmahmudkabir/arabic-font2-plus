@@ -47,8 +47,11 @@ function arabic_font_2_lite_shortcode( $atts, $content = null ) {
     );
 
     foreach ( $font_files as $font_file ) {
-        if ( file_exists( $font_file ) ) {
-            $font_file_path = $font_file;
+        if (file_exists($font_file)) {
+            $path = $font_file;
+            if (preg_match('/wp-content\/(.*)/', $path, $matches)) {
+                $font_file_path = $matches[0];
+            }
             break;
         }
     }
