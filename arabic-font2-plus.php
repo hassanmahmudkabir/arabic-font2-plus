@@ -29,7 +29,7 @@ function arabic_font_2_plus_shortcode( $atts, $content = null ) {
         plugin_dir_path( __FILE__ ) . 'fonts/' . $atts['font'] . '.woff',
         plugin_dir_path( __FILE__ ) . 'fonts/' . $atts['font'] . '.woff2',
         plugin_dir_path( __FILE__ ) . 'fonts/' . $atts['font'] . '.ttf',
-        plugin_dir_path( __FILE__ ) . 'fonts/' . $atts['font'] . '.svg',
+        plugin_dir_path( __FILE__ ) . 'fonts/' . $atts['font'] . '.svg'
     );
 
     foreach ( $font_files as $font_file ) {
@@ -47,7 +47,7 @@ function arabic_font_2_plus_shortcode( $atts, $content = null ) {
     $search_for = $atts['font'];
 
     if (empty($inline_css)) {
-        $inline_css = array(true_css);
+        $inline_css = array("true_css");
         add_action('wp_head', 'main_inline_css');
     } elseif (in_array(strtolower($search_for), array_map('strtolower', $myArray), true)) {
         $custom_css = `@font-face {
