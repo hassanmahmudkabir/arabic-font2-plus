@@ -8,32 +8,6 @@
  * Author URI: https://thealmahmud.blogspot.com/
  */
 
- function inline_css_arabic_font_2_plus($size, $gap)
-{
-    ?>
-    <style type="text/css">
-        .arabic-font-2-lite {
-        font-size: <?php echo $size; ?>;
-        line-height: <?php echo $gap; ?>;
-        }
-    </style>
-    <?php
-}
-add_action('wp_head', 'inline_css_arabic_font_2_plus');
-
-function user_provided_css_arabic_font_2_plus($font, $font_path, $css = '') {
-    ?>
-    <style id="user_provided_css_arabic_font_2_plus" type="text/css">
-    @font-face {
-        font-family: '<?php echo $font; ?>';
-        src: url('<?php echo $font_path; ?>');
-    };
-    <?php echo $css; ?>
-    </style>
-    <?php
-}
-add_action('wp_head', 'user_provided_css_arabic_font_2_plus');
-
 /**
  * Generate the Arabic font shortcode output.
  *
@@ -79,3 +53,28 @@ function arabic_font_2_lite_shortcode( $atts, $content = null ) {
 }
 
 add_shortcode( 'arabic', 'arabic_font_2_lite_shortcode' );
+
+function inline_css_arabic_font_2_plus($size, $gap) {
+    ?>
+    <style type="text/css">
+        .arabic-font-2-lite {
+        font-size: <?php echo $size; ?>;
+        line-height: <?php echo $gap; ?>;
+        }
+    </style>
+    <?php
+}
+add_action('wp_head', 'inline_css_arabic_font_2_plus', 10, 2);
+
+function user_provided_css_arabic_font_2_plus($font, $font_path, $css = '') {
+    ?>
+    <style id="user_provided_css_arabic_font_2_plus" type="text/css">
+    @font-face {
+        font-family: '<?php echo $font; ?>';
+        src: url('<?php echo $font_path; ?>');
+    };
+    <?php echo $css; ?>
+    </style>
+    <?php
+}
+add_action('wp_head', 'user_provided_css_arabic_font_2_plus', 11, 3);
