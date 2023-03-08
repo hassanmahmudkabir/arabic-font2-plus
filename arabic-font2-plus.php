@@ -19,11 +19,14 @@ function arabic_font_2_lite_shortcode( $atts, $content = null ) {
     $atts = shortcode_atts( array(
         'font' => 'noorehira',
         'size' => '1rem',
-        'gap' => '46px'
+        'gap' => '46px',
+        'custom_css' => ''
     ), $atts, 'arabic' );
 
     //sanitize user inputs
     $font_name = sanitize_text_field($atts['font']);
+    $custom_css = sanitize_text_field($atts['custom_css']);
+
 
     // Sanitize and validate the size attribute
     $font_size = esc_attr( $atts['size'] );
@@ -94,7 +97,7 @@ function arabic_font_2_lite_shortcode( $atts, $content = null ) {
     }
 
     // Generate shortcode output
-    $output = '<span class="arabic-font-2-lite">' . $content . '</span>';
+    $output = '<div class="arabic-font-2-lite" style="font-family: '.$font_name.';'.$custom_css.'">' . $content . '</div>';
 
     return $output;
 }
@@ -117,7 +120,7 @@ function user_provided_css_arabic_font_2_plus($font, $font_path) {
     <style id="user_provided_css_arabic_font_2_plus" type="text/css">
     @font-face {
         font-family: '<?php echo $font; ?>';
-        src: url('<?php echo $font_path; ?>');
+        src: url(/<?php echo $font_path; ?>);
     };
     </style>
     <?php
