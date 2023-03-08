@@ -8,6 +8,19 @@
  * Author URI: https://thealmahmud.blogspot.com/
  */
 
+ function inline_css_arabic_font_2_plus($size, $gap)
+{
+    ?>
+    <style type="text/css">
+        
+        arabic-font-2-lite {
+        font-size:: <?php echo $size; ?>;
+        line-height: <?php echo $gap; ?>;
+        }
+    </style>
+    <?php
+}
+add_action('wp_head', 'inline_css_arabic_font_2_plus');
 
 /**
  * Generate the Arabic font shortcode output.
