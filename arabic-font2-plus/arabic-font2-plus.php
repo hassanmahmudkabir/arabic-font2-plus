@@ -1,11 +1,11 @@
 <?php
 /**
- * Plugin Name: Arabic Font 2 Plus "Extended"
+ * Plugin Name: Arabic Font 2 Plus
  * Plugin URI: https://thealmahmud.blogspot.com/
  * Description: This plugin allows you to change the font of text in a post using a shortcode. Use it as [arabic]Your Text[/arabic], You may attach parameters such As   1)font (Required): provide the font name (without extention) you uploaded to this plugin's font directory      2)size (Optional): will set font-size for the text      3)gap (Optional): will set line-height for the text      4)custom-css (Optional): you may provide VALID css, whice will be applied to your text       Your Text may Contain Shortcode, we will do the execution for you, example: [arabic][another_shortcode]Your Text[/another_shortcode] [/arabic]
 
 Please note This Is A Plugin By Hassan Mahmud Kabir(https://www.facebook.com/hassan.mahmud.kabir.1/) (hassan.mahmud.kabir@gmail.com) Inspired By A Plugin Arabic Font 2 Plus (https://github.com/almahmudbd/arabic-font2-plus),Created By ChatGPT By the direction almahmud(https://thealmahmud.blogspot.com/)
- * Version: 2.0
+ * Version: 2.1
  * Author: almahmud & Hassan Mahmud Kabir
  * Author URI: https://thealmahmud.blogspot.com/
  */
@@ -109,7 +109,7 @@ function arabic_font_shortcode_callback( $atts, $content = null ) {
     }
 
     // Generate shortcode output
-    $output = '<div class="arabic-font-2-lite" style="font-family: '.$font_name.';'.$custom_css.'">' . do_shortcode($content) . '</div>';
+    $output = '<div class="arabic-font-2-plus" style="font-family: '.$font_name.';'.$custom_css.'">' . do_shortcode($content) . '</div>';
 
     return $output;
 }
@@ -119,7 +119,7 @@ add_shortcode( 'arabic', 'arabic_font_shortcode_callback' );
 function basic_css_arabic_font_2_plus($size, $gap) {
     ?>
     <style id="main_css_arabic_font_2_plus" type="text/css">
-        .arabic-font-2-lite {
+        .arabic-font-2-plus {
         font-size: <?php echo $size; ?>;
         line-height: <?php echo $gap; ?>;
         }
