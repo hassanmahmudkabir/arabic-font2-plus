@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: Arabic Font 2 Plus
- * Plugin URI: https://thealmahmud.blogspot.com/
+ * Plugin URI: https://github.com/almahmudbd/arabic-font2-plus
  * Description: This plugin allows you to change the font of text in a post using a shortcode. Use it as [arabic]Your Text[/arabic], You may attach parameters such As   1)font (Required): provide the font name (without extention) you uploaded to this plugin's font directory      2)size (Optional): will set font-size for the text      3)gap (Optional): will set line-height for the text      4)custom-css (Optional): you may provide VALID css, whice will be applied to your text       Your Text may Contain Shortcode, we will do the execution for you, example: [arabic][another_shortcode]Your Text[/another_shortcode] [/arabic]
 
 Please note This Is A Plugin By Hassan Mahmud Kabir(https://www.facebook.com/hassan.mahmud.kabir.1/) (hassan.mahmud.kabir@gmail.com) Inspired By A Plugin Arabic Font 2 Plus (https://github.com/almahmudbd/arabic-font2-plus),Created By ChatGPT By the direction almahmud(https://thealmahmud.blogspot.com/)
