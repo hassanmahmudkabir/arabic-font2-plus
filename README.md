@@ -8,7 +8,7 @@ Installation
 [![Github Downloads (total)](https://img.shields.io/github/downloads/almahmudbd/arabic-font2-plus/total?color=green&style=for-the-badge)](https://github.com/almahmudbd/arabic-font2-plus/releases)
 
 1.  Download the plugin from the WordPress Plugin Repository or from the [GitHub repository](https://github.com/almahmudbd/arabic-font2-plus/).
-2.  Upload the plugin files to the `/wp-content/plugins/arabic-font2-plus-extended` directory, or install the plugin through the WordPress plugins screen directly.
+2.  Upload the plugin files to the `/wp-content/plugins/arabic-font2-plus` directory, or install the plugin through the WordPress plugins screen directly.
 3.  Activate the plugin through the 'Plugins' screen in WordPress.
 
 Usage
