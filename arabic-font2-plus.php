@@ -122,6 +122,7 @@ function basic_css_arabic_font_2_plus($size, $gap) {
         .arabic-font-2-plus {
         font-size: <?php echo $size; ?>;
         line-height: <?php echo $gap; ?>;
+              direction: rtl;
         }
     </style>
     <?php
