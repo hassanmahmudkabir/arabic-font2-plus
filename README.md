@@ -62,7 +62,7 @@ Change Log
 -------
 ### [2.2] - 2023-05-03
 - plugin name updated
-- css improved
+- default css improved
 
 ### [2.0] - 2023-03-09
 - plugin is rewritten by Hassan Mahmud Kabir
