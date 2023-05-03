@@ -1,11 +1,9 @@
 <?php
 /**
- * Plugin Name: Arabic Font 2 Plus
+ * Plugin Name: RuqyahBD's Arabic Font Plus
  * Plugin URI: https://github.com/almahmudbd/arabic-font2-plus
- * Description: This plugin allows you to change the font of text in a post using a shortcode. Use it as [arabic]Your Text[/arabic], You may attach parameters such As   1)font (Required): provide the font name (without extention) you uploaded to this plugin's font directory      2)size (Optional): will set font-size for the text      3)gap (Optional): will set line-height for the text      4)custom-css (Optional): you may provide VALID css, whice will be applied to your text       Your Text may Contain Shortcode, we will do the execution for you, example: [arabic][another_shortcode]Your Text[/another_shortcode] [/arabic]
-
-Please note This Is A Plugin By Hassan Mahmud Kabir(https://www.facebook.com/hassan.mahmud.kabir.1/) (hassan.mahmud.kabir@gmail.com) Inspired By A Plugin Arabic Font 2 Plus (https://github.com/almahmudbd/arabic-font2-plus),Created By ChatGPT By the direction almahmud(https://thealmahmud.blogspot.com/)
- * Version: 2.1
+ * Description: This plugin allows you to change the font of text in a post using a shortcode. Use it as [arabic]Your Text[/arabic], You may attach parameters such As   1)font (Required): provide the font name (without extention) you uploaded to this plugin's font directory      2)size (Optional): will set font-size for the text      3)gap (Optional): will set line-height for the text      4)custom-css (Optional): you may provide VALID css, whice will be applied to your text,       Your Text may Contain Shortcode, we will do the execution for you, example: [arabic][another_shortcode]Your Text[/another_shortcode] [/arabic]
+ * Version: 2.2
  * Author: almahmud & Hassan Mahmud Kabir
  * Author URI: https://thealmahmud.blogspot.com/
  */
@@ -19,7 +17,8 @@ Please note This Is A Plugin By Hassan Mahmud Kabir(https://www.facebook.com/has
  * introduced some critical logic checking
  * repetative css printing was eliminated
  * introduced some major new feature such as custom css, input "validation" etc
- *
+ * 
+ * Hassan Mahmud Kabir(https://facebook.com/hassan.mahmud.kabir.1/) (hassan.mahmud.kabir@gmail.com) github url - (https://github.com/almahmudbd/arabic-font2-plus)
  * Have A Happy Time
  **/
 
@@ -34,7 +33,7 @@ function arabic_font_shortcode_callback( $atts, $content = null ) {
     $atts = shortcode_atts( array(
         'font' => 'noorehira',
         'size' => '1rem',
-        'gap' => '46px',
+        'gap' => '2.8rem',
         'custom_css' => ''
     ), $atts, 'arabic' );
 
@@ -122,7 +121,7 @@ function basic_css_arabic_font_2_plus($size, $gap) {
         .arabic-font-2-plus {
         font-size: <?php echo $size; ?>;
         line-height: <?php echo $gap; ?>;
-              direction: rtl;
+           direction: rtl;
         }
     </style>
     <?php
