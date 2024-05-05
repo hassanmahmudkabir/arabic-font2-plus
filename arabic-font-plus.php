@@ -1,27 +1,13 @@
 <?php
 /**
- * Plugin Name: Arabic Font 2 Plus "Extended"
- * Plugin URI: https://thealmahmud.blogspot.com/
- * Description: This plugin allows you to change the font of text in a post using a shortcode. Use it as [arabic]Your Text[/arabic], You may attach parameters such As   1)font (Required): provide the font name (without extention) you uploaded to this plugin's font directory      2)size (Optional): will set font-size for the text      3)gap (Optional): will set line-height for the text      4)custom-css (Optional): you may provide VALID css, whice will be applied to your text       Your Text may Contain Shortcode, we will do the execution for you, example: [arabic][another_shortcode]Your Text[/another_shortcode] [/arabic]
-
-Please note This Is A Plugin By Hassan Mahmud Kabir(https://www.facebook.com/hassan.mahmud.kabir.1/) (hassan.mahmud.kabir@gmail.com) Inspired By A Plugin Arabic Font 2 Plus (https://github.com/almahmudbd/arabic-font2-plus),Created By ChatGPT By the direction almahmud(https://thealmahmud.blogspot.com/)
- * Version: 2.0
+ * Plugin Name: RuqyahBD's Arabic Font Plus
+ * Plugin URI: https://github.com/almahmudbd/arabic-font2-plus
+ * Description: This plugin allows you to change the font of text in a post using a shortcode. Use it as [arabic]Your Text[/arabic], You may attach parameters such As   1)font (Required): provide the font name (without extention) you uploaded to this plugin's font directory      2)size (Optional): will set font-size for the text      3)gap (Optional): will set line-height for the text      4)custom-css (Optional): you may provide VALID css, whice will be applied to your text,       Your Text may Contain Shortcode, we will do the execution for you, example: [arabic][another_shortcode]Your Text[/another_shortcode] [/arabic]
+ * Version: 2.2
+ * Plugin URI:  https://github.com/almahmudbd/arabic-font2-plus      
  * Author: almahmud & Hassan Mahmud Kabir
- * Author URI: https://thealmahmud.blogspot.com/
+ * Author URI: https://ruqyahbd.org/
  */
-
-/**
- * DEVELOPER NOTE:
- * Hello, it's Hassan Here. this plugin was created at first with the help of ChatGPT by almahmud. As it wasn't working as intended i did take the job to fix it and Alhamdullah (All Praise TO Allah). Though There are a vast amount of existing plugins whice do the same as this one, i take this refactoring(back then i thought) job as a fun challenge And It's here now.
- * This Plugin Is Rewritten, From "Kind Of Scratch", because previous plugin was so much confusing and much more work was need to be performed, So I took this One From https://github.com/almahmudbd/arabic-font2-plus ,then tried to
- * fix known bugs
- * improve code security
- * introduced some critical logic checking
- * repetative css printing was eliminated
- * introduced some major new feature such as custom css, input "validation" etc
- *
- * Have A Happy Time
- **/
 
 /**
  * Generate the Arabic font shortcode output.
@@ -34,7 +20,7 @@ function arabic_font_shortcode_callback( $atts, $content = null ) {
     $atts = shortcode_atts( array(
         'font' => 'noorehira',
         'size' => '1rem',
-        'gap' => '46px',
+        'gap' => '2.8rem',
         'custom_css' => ''
     ), $atts, 'arabic' );
 
@@ -109,7 +95,7 @@ function arabic_font_shortcode_callback( $atts, $content = null ) {
     }
 
     // Generate shortcode output
-    $output = '<div class="arabic-font-2-lite" style="font-family: '.$font_name.';'.$custom_css.'">' . do_shortcode($content) . '</div>';
+    $output = '<div class="arabic-font-2-plus" style="font-family: '.$font_name.';'.$custom_css.'">' . do_shortcode($content) . '</div>';
 
     return $output;
 }
@@ -119,9 +105,10 @@ add_shortcode( 'arabic', 'arabic_font_shortcode_callback' );
 function basic_css_arabic_font_2_plus($size, $gap) {
     ?>
     <style id="main_css_arabic_font_2_plus" type="text/css">
-        .arabic-font-2-lite {
+        .arabic-font-2-plus {
         font-size: <?php echo $size; ?>;
         line-height: <?php echo $gap; ?>;
+           direction: rtl;
         }
     </style>
     <?php
